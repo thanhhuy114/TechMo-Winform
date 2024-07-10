@@ -1,0 +1,467 @@
+﻿<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0C81124D-7C20-4195-90BB-DDD82D5FAFE6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TechMo</RootNamespace>
+    <AssemblyName>TechMo</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>none</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\Images\logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.4\lib\net48\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.11.61.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.11.61\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.Core, Version=1.0.2592.51, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.2592.51\lib\net462\Microsoft.Web.WebView2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.WinForms, Version=1.0.2592.51, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.2592.51\lib\net462\Microsoft.Web.WebView2.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.Wpf, Version=1.0.2592.51, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.2592.51\lib\net462\Microsoft.Web.WebView2.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.5.3.2\lib\net46\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=111.3.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.111.3.0\lib\net48\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.8.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=8.0.0.3, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.8.0.3\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\CrawlActionDetail.cs" />
+    <Compile Include="Models\CrawlActionType.cs" />
+    <Compile Include="Models\CrawlConfig.cs" />
+    <Compile Include="Models\CrawlDataType.cs" />
+    <Compile Include="Models\CrawlDetail.cs" />
+    <Compile Include="Models\CrawlDetaiOtherOption.cs" />
+    <Compile Include="Models\CrawlOptionConditionTypes.cs" />
+    <Compile Include="Models\CrawlOptionDetail.cs" />
+    <Compile Include="Models\CrawlOptionTypes.cs" />
+    <Compile Include="Models\CrawlResultType.cs" />
+    <Compile Include="Models\CrawlType.cs" />
+    <Compile Include="Models\RequestModel\AddCrawlConfigHtmlRequirestModel.cs" />
+    <Compile Include="Models\ResponseModel\AllCrawlConfigResponseModel.cs" />
+    <Compile Include="Models\ResponseModel\ConfigDetailResponseModel.cs" />
+    <Compile Include="ViewModels\ConfigsDetailViewModels.cs" />
+    <Compile Include="Views\Controls\ctCrawlConfigDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Controls\ctCrawlConfigDetail.Designer.cs">
+      <DependentUpon>ctCrawlConfigDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\frmConfigDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\frmConfigDetail.Designer.cs">
+      <DependentUpon>frmConfigDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\frmLoading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\frmLoading.Designer.cs">
+      <DependentUpon>frmLoading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\ConfigsViewModels.cs" />
+    <Compile Include="Views\Forms\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\frmConfigs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\frmConfigs.Designer.cs">
+      <DependentUpon>frmConfigs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\frmTestWeb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\frmTestWeb.Designer.cs">
+      <DependentUpon>frmTestWeb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\ctCrawlConfig.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Controls\ctCrawlConfig.Designer.cs">
+      <DependentUpon>ctCrawlConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <EmbeddedResource Include="Views\Controls\ctCrawlConfigDetail.resx">
+      <DependentUpon>ctCrawlConfigDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\frmConfigDetail.resx">
+      <DependentUpon>frmConfigDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\frmLoading.resx">
+      <DependentUpon>frmLoading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\frmConfigs.resx">
+      <DependentUpon>frmConfigs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\frmTestWeb.resx">
+      <DependentUpon>frmTestWeb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Controls\ctCrawlConfig.resx">
+      <DependentUpon>ctCrawlConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.manifest" />
+    <None Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\DataSources\MoneyPlus.Models.CrawlConfig.datasource" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\cash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\closeMenu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\cross.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\checked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\dash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\delete_2_line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\filter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\financial-management-article-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\forgot-password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\full-stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\giphy.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\hide.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\hideAmount.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\Home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\laptop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\logoMoneyPlus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\logoNapas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\minimized.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\money-transfer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\more.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\more2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\next2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\noavata.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\no-data-icon-20.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\openMenu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\padlock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\panel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\paywe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\pencil_fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\pin-code.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\plus1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\point.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\replace.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\right-arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\rotate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\search_2_line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\send.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\setting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\showAmount.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\sim.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\sim.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\statistical.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\three dots.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\triangle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\wallet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\warning2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\warning3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\warning21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\world.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\4b26c03a-2301-4975-a1b1-dd9e29007675-removebg-preview - Copy.png" />
+    <None Include="Resources\Images\arrow - Copy.png" />
+    <None Include="Resources\Images\back - Copy.png" />
+    <None Include="Resources\Images\biometric-verification - Copy.jpg" />
+    <None Include="Resources\Images\budget - Copy.png" />
+    <None Include="Resources\Images\cash - Copy.png" />
+    <None Include="Resources\Images\close - Copy.png" />
+    <None Include="Resources\Images\circle-1 - Copy.png" />
+    <None Include="Resources\Images\copy - Copy.png" />
+    <None Include="Resources\Images\closeMenu - Copy.png" />
+    <None Include="Resources\Images\cross - Copy.png" />
+    <None Include="Resources\Images\check - Copy.png" />
+    <None Include="Resources\Images\dash - Copy.png" />
+    <None Include="Resources\Images\filter - Copy.png" />
+    <None Include="Resources\Images\checked - Copy.png" />
+    <None Include="Resources\Images\delete_2_line - Copy.png" />
+    <None Include="Resources\Images\email - Copy.png" />
+    <None Include="Resources\Images\financial-management-article-removebg-preview - Copy.png" />
+    <None Include="Resources\Images\forgot-password - Copy.png" />
+    <None Include="Resources\Images\giphy - Copy.gif" />
+    <None Include="Resources\Images\full-stop - Copy.png" />
+    <None Include="Resources\Images\hide - Copy.png" />
+    <None Include="Resources\Images\Home - Copy.png" />
+    <None Include="Resources\Images\html - Copy.jpg" />
+    <None Include="Resources\Images\hideAmount - Copy.png" />
+    <None Include="Resources\Images\hide1 - Copy.png" />
+    <None Include="Resources\Images\images - Copy.png" />
+    <None Include="Resources\Images\istockphoto - Copy.jpg" />
+    <Content Include="Resources\JavaScript\build\selectorgadget_combined_3.js" />
+    <Content Include="Resources\JavaScript\build\selectorgadget_combined.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\JavaScript\build\selectorgadget_combined.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\JavaScript\build\selectorgadget_combined_2.js" />
+    <Content Include="Resources\JavaScript\selectorgadget.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\Images\html.jpg" />
+    <None Include="Resources\Images\refresh-arrow.png" />
+    <None Include="Resources\Images\right-arrow %281%29.png" />
+    <None Include="Resources\Images\arrow.png" />
+    <None Include="Resources\Images\Spin-1s-200px.gif" />
+    <None Include="Resources\Images\email.png" />
+    <None Include="Resources\Images\newpass.png" />
+    <None Include="Resources\Images\istockphoto.jpg" />
+    <None Include="Resources\Images\biometric-verification.jpg" />
+    <None Include="Resources\Images\circle-1.png" />
+    <None Include="Resources\Images\images.png" />
+    <None Include="Resources\Images\Refresh_Colored.png" />
+    <None Include="Resources\Images\4b26c03a-2301-4975-a1b1-dd9e29007675-removebg-preview.png" />
+    <None Include="Resources\Images\show.png" />
+    <None Include="Resources\Images\hide1.png" />
+    <None Include="Resources\Images\budget.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Libary\Libary.csproj">
+      <Project>{ba95bec4-d2a7-4d21-b227-cbfa964a122a}</Project>
+      <Name>Libary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Web.WebView2.1.0.2592.51\build\Microsoft.Web.WebView2.targets" Condition="Exists('..\packages\Microsoft.Web.WebView2.1.0.2592.51\build\Microsoft.Web.WebView2.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Web.WebView2.1.0.2592.51\build\Microsoft.Web.WebView2.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Web.WebView2.1.0.2592.51\build\Microsoft.Web.WebView2.targets'))" />
+  </Target>
+</Project>
